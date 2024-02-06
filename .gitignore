@@ -57,7 +57,7 @@ wheels/
 .DS_Store
 
 data/*
-data/*
 images/*
+output/*
 saved_models/*
 __pycache__
