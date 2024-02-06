@@ -36,7 +36,8 @@ def weights_init_normal(m):
         torch.nn.init.constant_(m.bias.data, 0.0)
 
 
-os.makedirs("images", exist_ok=True)
+os.makedirs("ac-images", exist_ok=True)
+os.makedirs("gan-images", exist_ok=True)
 
 
 # Configure data loader
@@ -65,4 +66,5 @@ def create_sample_image(isACGan, generator, n_row, batches_done):
     labels = np.array([num for _ in range(n_row) for num in range(n_row)])
     labels = Variable(LongTensor(labels))
     gen_imgs = generator(z, labels) if isACGan else generator(z)
-    save_image(gen_imgs.data, "images/%d.png" % batches_done, nrow=n_row, normalize=True)
+    prefix = "ac-gan" if isACGan else "gan"
+    save_image(gen_imgs.data, prefix + "-images/%d.png" % batches_done, nrow=n_row, normalize=True)
