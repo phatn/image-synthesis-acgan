@@ -21,8 +21,10 @@ if __name__ == '__main__':
 
     dataloader = create_dataloader()
 
-    # Optimizers
-    # Weight update rules for model training using Adam algorithm
+    '''
+    Optimizers: improve training speeds in deep neural networks and reach convergence quickly
+    Weight update rules for model training using Adam algorithm, a learning rate
+    '''
     optimizer_G = torch.optim.Adam(generator.parameters(), lr=opt.lr, betas=(opt.b1, opt.b2))
     optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=opt.lr, betas=(opt.b1, opt.b2))
 

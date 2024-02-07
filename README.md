@@ -1,5 +1,13 @@
-# image-synthesis-acgan
+# AC-GAN - Handwritten Digits Generator
 
+
+## Requirements
+- Python >= 3.7
+
+## Installation
+pip install -r requirements.txt
+
+## Execution
 To run the implementation for specific network:
 - Go to networks
 - Run application.py
